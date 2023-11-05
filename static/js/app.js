@@ -128,7 +128,7 @@ $(function () {
     {
         if ($(document).scrollTop() > 40) {
             $('.do-sticky').addClass('sticky-header');
-            // $('.do-sticky').addClass('header-shrink');
+            //$('.do-sticky').addClass('header-shrink');
         }
         else {
             $('.do-sticky').removeClass('sticky-header');
@@ -479,3 +479,7 @@ $(function () {
         }
     }).trigger("resize");
 })(jQuery);
+
+setTimeout(function () {
+    $('#message').fadeOut('slow');
+},  4000 )
