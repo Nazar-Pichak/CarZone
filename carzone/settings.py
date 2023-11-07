@@ -53,6 +53,7 @@ SOCIALACCOUNT_LOGIN_ON_GET = True
 # Application definition
 
 INSTALLED_APPS = [
+    'contacts.apps.ContactsConfig',
     'cars.apps.CarsConfig',
     'pages.apps.PagesConfig',
     'accounts.apps.AccountsConfig',
