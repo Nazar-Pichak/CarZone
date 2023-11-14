@@ -28,6 +28,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['intense-tundra-83438-27e49d18471b.herokuapp.com']
 
+
 LOGIN_REDIRECT_URL = 'dashboard'
 
 UTHENTICATION_BACKENDS = [
