@@ -191,7 +191,7 @@ MESSAGE_TAGS = {
     message.ERROR: 'danger',
 }
 
-SITE_ID = 1
+SITE_ID = 2
 
 
 # Email settings
