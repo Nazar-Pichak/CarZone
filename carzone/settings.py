@@ -26,7 +26,7 @@ SECRET_KEY = '6_j4y50uu2p2jug1w^o3fl4%3)!v6n$rz5q(yto@2o4#9^r^x8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.carzonewebapp.site']
+ALLOWED_HOSTS = ['intense-tundra-83438-27e49d18471b.herokuapp.com','www.carzonewebapp.site']
 
 
 LOGIN_REDIRECT_URL = 'dashboard'
