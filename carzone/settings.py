@@ -29,6 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['intense-tundra-83438-27e49d18471b.herokuapp.com','www.carzonewebapp.site']
 
 
+
 LOGIN_REDIRECT_URL = 'dashboard'
 
 UTHENTICATION_BACKENDS = [
@@ -191,7 +192,7 @@ MESSAGE_TAGS = {
     message.ERROR: 'danger',
 }
 
-SITE_ID = 3
+SITE_ID = 1
 
 
 # Email settings
