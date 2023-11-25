@@ -205,7 +205,7 @@ SITE_ID = 3
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'pichak.nazariy@gmail.com'
-EMAIL_HOST_PASSWORD = '' 
+EMAIL_HOST_PASSWORD = 'yddhxtxdquxjqgpl' 
 EMAIL_USE_TLS = True
 
 
