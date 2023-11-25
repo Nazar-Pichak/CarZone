@@ -26,8 +26,8 @@ SECRET_KEY = '6_j4y50uu2p2jug1w^o3fl4%3)!v6n$rz5q(yto@2o4#9^r^x8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-# ALLOWED_HOSTS = ['intense-tundra-83438-27e49d18471b.herokuapp.com','www.carzonewebapp.site']
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['intense-tundra-83438-27e49d18471b.herokuapp.com','www.carzonewebapp.site']
+# ALLOWED_HOSTS = ['*']
 
 
 
@@ -51,7 +51,7 @@ UTHENTICATION_BACKENDS = [
 # }
 
 
-SOCIALACCOUNT_LOGIN_ON_GET = False
+SOCIALACCOUNT_LOGIN_ON_GET = True
 
 
 # Application definition
@@ -180,15 +180,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'carzone/static'),
-    os.path.join(BASE_DIR, 'media'),
-]
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+# STATIC_URL = '/static/'
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATICFILES_DIRS = [
+    # os.path.join(BASE_DIR, 'carzone/static'),
+    # os.path.join(BASE_DIR, 'media'),
+# ]
+# 
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_URL = '/media/'
 
 
 from django.contrib.messages import constants as message
@@ -197,7 +197,7 @@ MESSAGE_TAGS = {
     message.ERROR: 'danger',
 }
 
-SITE_ID = 3
+SITE_ID = 1
 
 
 # Email settings
