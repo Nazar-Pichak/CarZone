@@ -36,3 +36,7 @@ button:active, input[type=submit]:active, input[type=button]:active, .button:foc
 a:link, a:visited {
     color: #1c1f1f;
 }
+
+#header a:link, #header a:visited, #logout-form button {
+    color: black;
+}
