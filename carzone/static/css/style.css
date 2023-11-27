@@ -8109,8 +8109,8 @@ table {
 
 @media all and (min-width: 992px) {
     .banner img {
-        /*animation: bgburnsEast 25s linear infinite alternate;
-        -webkit-animation: bgburnsEast 25s linear infinite alternate;*/
+        animation: bgburnsEast 25s linear infinite alternate;
+        -webkit-animation: bgburnsEast 25s linear infinite alternate; 
     }
 
     .dropdown:hover > .dropdown-menu {
@@ -9769,10 +9769,17 @@ a.nav-link.active{
 }
 
 
+@media screen and (max-width: 992px) {
+    .top-header {
+        display: block !important;
+    }
+}
 
-
-
-
-
+@media screen and (max-width: 992px) {
+    .sticky-header {
+        top: 105px !important;
+    }
+    
+}
 
 
