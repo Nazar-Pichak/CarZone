@@ -9769,18 +9769,74 @@ a.nav-link.active{
 }
 
 
-@media screen and (max-width: 992px) {
+@media (max-width: 992px) {
     .top-header {
         display: block !important;
     }
-}
 
-@media screen and (max-width: 992px) {
-    .sticky-header {
-        top: 105px !important;
+    .from-to {
+        display: none;
     }
 }
 
+@media (max-width: 992px) {
+    .sticky-header {
+        top: 90px !important;
+    }
+}
 
+@media (max-width: 767px) {
+    .info-contact {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    #header {
+        display: grid;
+        grid-template-columns: 45% 55%;
+        
+    }
+}
+
+@media (max-width: 436px) {
+    .pull-right {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        padding: 0;
+        width: 200px;
+        
+    }
+
+    #register-signin {
+        padding-right: 20px;
+        padding-left: 0;
+        
+    }
+
+}
+
+@media (max-width: 397px) {
+    a.phone {
+        margin-right: 0px;
+    }
+}
+
+@media (max-width: 371px) {
+    a.navbar-brand {
+        margin-right: 0px;
+    }
+}
+
+@media (max-width: 363px) {
+    a.phone {
+        display: none;
+    }
+
+    .sticky-header {
+        top: 60px !important;
+    }
+
+}
 
 
