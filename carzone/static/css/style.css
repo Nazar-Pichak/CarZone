@@ -9781,7 +9781,18 @@ a.nav-link.active{
 
 @media (max-width: 992px) {
     .sticky-header {
-        top: 90px !important;
+        top: 60px !important;
+    }
+
+    .pull-right {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        width: 250px;
+        padding: 0;
+    }
+
+    #register-signin {
+        padding: 0;
     }
 
 }
@@ -9830,12 +9841,37 @@ a.nav-link.active{
 }
 
 @media (max-width: 363px) {
-    a.phone {
-        display: none;
-    }
 
     .sticky-header {
         top: 60px !important;
+    }
+
+    a.phone {
+        font-size: 3vw;
+    }
+
+}
+
+@media (max-width: 437px) {
+    .fa-tachometer {
+        display: none;
+    }
+
+    
+}
+
+@media (max-width: 356px) {
+    .main-header .company-logo img {
+        width: 280px;
+        height: 35px;
+    }
+
+    
+}
+
+@media (max-width: 342px) {
+    a.phone {
+        display: none;
     }
 
 }
