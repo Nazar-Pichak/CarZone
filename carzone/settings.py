@@ -24,10 +24,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SECRET_KEY = '6_j4y50uu2p2jug1w^o3fl4%3)!v6n$rz5q(yto@2o4#9^r^x8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['intense-tundra-83438-27e49d18471b.herokuapp.com','www.carzonewebapp.site']
-# ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['intense-tundra-83438-27e49d18471b.herokuapp.com','www.carzonewebapp.site']
+ALLOWED_HOSTS = ['*']
 
 
 
@@ -197,7 +197,8 @@ MESSAGE_TAGS = {
     message.ERROR: 'danger',
 }
 
-SITE_ID = 3
+# SITE_ID = 3
+SITE_ID = 1
 
 
 # Email settings
@@ -234,7 +235,7 @@ MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
 CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOWED_ORIGINS = [
-    "https://yourdomain.com",
+    "https://www.carzonewebapp.com",
     "http://localhost:8000",  # Add the origin of your frontend app
 ]
 
