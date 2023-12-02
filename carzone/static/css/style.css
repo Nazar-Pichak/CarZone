@@ -8491,9 +8491,9 @@ table {
         font-size: 16px;
     }
 
-    .mt-50 {
-        margin-top: 0;
-    }
+    /* .mt-50 { */
+        /* margin-top: 0; */
+    /* } */
 
     .service-section-2 {
         padding: 80px 0 50px;
