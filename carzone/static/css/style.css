@@ -9875,3 +9875,9 @@ a.nav-link.active{
     }
 
 }
+
+@media (max-height: 528px)  {
+    .banner .w-100 {
+        width: 100vw!important;
+    }
+}
