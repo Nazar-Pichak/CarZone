@@ -9864,9 +9864,7 @@ a.nav-link.active{
     .main-header .company-logo img {
         width: 280px;
         height: 35px;
-    }
-
-    
+    }   
 }
 
 @media (max-width: 342px) {

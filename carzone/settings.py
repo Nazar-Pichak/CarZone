@@ -235,7 +235,7 @@ MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
 CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOWED_ORIGINS = [
-    "https://www.carzonewebapp.com",
+    "https://www.carzonewebapp.site",
     "http://localhost:8000",  # Add the origin of your frontend app
 ]
 
