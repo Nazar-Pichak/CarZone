@@ -33,7 +33,7 @@ ALLOWED_HOSTS = ['intense-tundra-83438-27e49d18471b.herokuapp.com','www.carzonew
 
 LOGIN_REDIRECT_URL = 'dashboard'
 
-UTHENTICATION_BACKENDS = [
+AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
 
@@ -253,7 +253,7 @@ CORS_ALLOW_HEADERS = [
     'x-requested-with',
     'Access-Control-Allow-Origin'
 ]
-# 
+
 CORS_ALLOW_METHODS = [
     'DELETE',
     'GET',
