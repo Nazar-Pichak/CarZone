@@ -68,3 +68,6 @@ def contacts(request):
         
     return render(request, 'pages/contacts.html')
         
+
+def admin(request):
+    return render(request, 'pages/not_found.html')

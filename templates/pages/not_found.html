@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+
+    body {
+        height: 100vh;
+        display: grid;
+        {% comment %} grid-template-rows: 30% 30% 40%%; {% endcomment %}
+        background-image: url("../static/img/car-11.jpg");
+        background-repeat:no-repeat;
+        {% comment %} background-size:contain; {% endcomment %}
+        background-position:center;
+    }
+    
+    h1 {
+        text-align: center;
+        margin-top: 40vh;
+        color: blanchedalmond;
+    }
+
+    .conteiner-back {
+        
+    }
+    
+</style>
+
+{% comment %} <img src=" {% static '/img/car-11.jpg' %}" alt=""> {% endcomment %}
+<div class="conteiner-back">
+
+    <h1>Upps, page not found ...</h1>
+</div>
+{% endblock  %}
