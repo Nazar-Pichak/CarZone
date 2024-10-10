@@ -216,8 +216,8 @@ EMAIL_USE_TLS = True
 
 # AWS Settings
 
-AWS_ACCESS_KEY_ID = 'AKIAYQEERYQK7XVYHQNT'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = 'AKIAYQEERYQKZYCPNXMZ'
+AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'carzonewebapp'
 
 AWS_S3_SIGNATURE_NAME = 's3v4',
@@ -251,7 +251,7 @@ CORS_ALLOW_HEADERS = [
     'user-agent',
     'x-csrftoken',
     'x-requested-with',
-    'Access-Control-Allow-Origin'
+    'Access-Control-Allow-Origin',
 ]
 
 CORS_ALLOW_METHODS = [

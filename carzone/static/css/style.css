@@ -1,7 +1,12 @@
+html {
+    background: #222e56;
+}
+
 html, body {
     /* height: 100%; */
     font-family: 'Open Sans', sans-serif;
 }
+
 
 a {
     cursor: pointer;
