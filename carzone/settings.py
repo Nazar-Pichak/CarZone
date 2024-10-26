@@ -203,10 +203,10 @@ SITE_ID = 3
 
 # Email settings
 
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'smtp.eu.mailgun.org'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'pichak.nazariy@gmail.com'
-EMAIL_HOST_PASSWORD = 'yddhxtxdquxjqgpl' 
+EMAIL_HOST_USER = 'pichak.nazariy@carzonewebapp.site'
+EMAIL_HOST_PASSWORD = 'postmaster@www.carzonewebapp.site' 
 EMAIL_USE_TLS = True
 
 
