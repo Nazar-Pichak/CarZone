@@ -5,13 +5,13 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand company-logo" href="{% url "home" %}">
-                <img src="{% static 'img/logos/black-logo.png' %}" alt="logo"></img>
+                <img class="company-logo-change" src="{% static 'img/logos/logo.png' %}" data-static-url="{% static 'img/logos/' %}" alt="logo"></img>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="fa fa-bars"></span>
             </button> 
             <div class="navbar-collapse collapse w-100" id="navbar">
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ml-auto nav-top-space">
                     <li class="nav-item">
                         <a {% if '/' == request.path %} class="nav-link active" {% else %} class="nav-link" {% endif %}  href="{% url 'home' %}" >
                             Home
