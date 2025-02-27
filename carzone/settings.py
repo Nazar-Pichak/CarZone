@@ -41,15 +41,6 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-# SOCIALACCOUNT_PROVIDERS = {
-    # 'facebook': {
-        # 'SCOPE': ['email'],
-        # 'METHOD': 'js_sdk',
-        # 'FIELDS': ['id', 'email', 'name', 'first_name', 'last_name', 'verified', 'locale', 'timezone', 'link', 'gender', 'updated_time'],
-        # 'VERSION': 'v12.0',
-    # }
-# }
-
 
 SOCIALACCOUNT_LOGIN_ON_GET = True
 
@@ -120,14 +111,14 @@ WSGI_APPLICATION = 'carzone.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 # DATABASES = {
-    # 'default': {
-        # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        # 'NAME': 'carzone_db',
-        # 'USER': 'postgres',
-        # 'PASSWORD': 'postgres',
-        # 'HOST': 'localhost',
-        # 'PORT': '5432',
-    # }
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'carzone_db',
+#         'USER': 'postgres',
+#         'PASSWORD': 'postgres',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
 # }
 
 # DATABASES = {
@@ -180,42 +171,38 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# Uncoment the following lines in the development environment:
+# STATIC_URL = '/static/'
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_URL = '/media/'
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'carzone/static'),
     os.path.join(BASE_DIR, 'media'),
 ]
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
 
 
 from django.contrib.messages import constants as message
 
-MESSAGE_TAGS = {
-    message.ERROR: 'danger',
-}
+MESSAGE_TAGS = { message.ERROR: 'danger', }
 
 SITE_ID = 3
+# Uncomment the following line in the development environment:
 # SITE_ID = 1
 
 
 # Email settings
-
-EMAIL_HOST = 'smtp.eu.mailgun.org'
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'pichak.nazariy@carzonewebapp.site'
-EMAIL_HOST_PASSWORD = 'postmaster@www.carzonewebapp.site' 
+EMAIL_HOST_USER = 'pichak.nazariy@gmail.com'
+EMAIL_HOST_PASSWORD = 'oifxpoctylwzugwf' 
 EMAIL_USE_TLS = True
 
 
-# Whitenoise settings
-
-# STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
-
 # AWS Settings
-
 AWS_ACCESS_KEY_ID = 'AKIAYQEERYQKZYCPNXMZ'
 AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'carzonewebapp'

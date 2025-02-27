@@ -1,12 +1,27 @@
-html {
-    background: #222e56;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html, body {
-    /* height: 100%; */
+html{
+    background: #222e56;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
     font-family: 'Open Sans', sans-serif;
 }
 
+.not-found {
+    background-image: url(../img/car-6.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+}
 
 a {
     cursor: pointer;
@@ -8966,12 +8981,6 @@ table {
         height: 330px;
     }
 
-    .sticky-header {
-        position: fixed;
-        z-index: 9999;
-        width: 100%;
-    }
-
     .sh-2{
         background: #fff;
     }
@@ -9786,7 +9795,7 @@ a.nav-link.active{
 
 @media (max-width: 992px) {
     .sticky-header {
-        top: 60px !important;
+        top: 49px;
     }
 
     .pull-right {
@@ -9830,55 +9839,23 @@ a.nav-link.active{
         padding-left: 0;
         
     }
-
 }
-
-@media (max-width: 397px) {
-    a.phone {
-        margin-right: 0px;
-    }
-}
-
-@media (max-width: 371px) {
-    a.navbar-brand {
-        margin-right: 0px;
-    }
-}
-
-@media (max-width: 363px) {
-
-    .sticky-header {
-        top: 60px !important;
-    }
-
-    a.phone {
-        font-size: 3vw;
-    }
-
-}
+ 
 
 @media (max-width: 437px) {
     .fa-tachometer {
         display: none;
-    }
-
-    
+    }   
 }
 
-@media (max-width: 356px) {
-    .main-header .company-logo img {
-        width: 280px;
-        height: 35px;
-    }
-
-    
-}
-
-@media (max-width: 342px) {
-    a.phone {
+@media (max-width: 372px) {
+    .phone {
         display: none;
     }
 
+    a.navbar-brand {
+        margin-right: 0px;
+    }
 }
 
 @media (max-height: 528px)  {
@@ -9887,7 +9864,7 @@ a.nav-link.active{
     }
 }
 
-/* .banner img { */
-    /* animation: bgburnsEast 20s linear infinite alternate; */
-    /* -webkit-animation: bgburnsEast 20s linear infinite alternate;  */
-/* } */
+.banner img { 
+    animation: bgburnsEast 20s linear infinite alternate;
+    -webkit-animation: bgburnsEast 20s linear infinite alternate; 
+} 
