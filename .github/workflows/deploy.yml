@@ -34,6 +34,9 @@ jobs:
 
     # - name: Pull Heroku remote
     #   run: git pull heroku main
+
+    - name: unshallow
+      run: git fetch --all --unshallow
       
     - name: Deploy to Heroku
       run: git push heroku main --force
