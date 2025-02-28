@@ -11,7 +11,7 @@
         <div class="breadcrumb-areas">
             <h1>Login To Your Account</h1>
             <ul class="breadcrumbs">
-                <li><a href="{% url "home" %}">Home</a></li>
+                <li><a href="{% url "home" %}" class="underline-animation py-1">Home</a></li>
                 <li class="active">Login</li>
             </ul>
         </div>
@@ -58,7 +58,7 @@
                             <li><a href="{% provider_login_url  'google' %}" class="google-bg"><i class="fa fa-google google-i"></i><span>Google</span></a></li>
                         </ul>
                     </form>
-                    <p>Don't have an account? <a href="{% url "register" %}" class="thembo"> Register here</a></p>
+                    <p>Don't have an account? <a href="{% url "register" %}" class="thembo underline-animation py-1"> Register here</a></p>
                 </div>
             </div>
         </div>

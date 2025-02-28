@@ -12,7 +12,7 @@
         <div class="breadcrumb-areas">
             <h1>Register</h1>
             <ul class="breadcrumbs">
-                <li><a href="{% url "home" %}">Home</a></li>
+                <li><a href="{% url "home" %}" class="underline-animation py-1">Home</a></li>
                 <li class="active">Register</li>
             </ul>
         </div>
@@ -75,7 +75,7 @@
                             <li><a href="{% provider_login_url  'google' %}" class="google-bg"><i class="fa fa-google google-i"></i><span>Google</span></a></li>
                         </ul>
                     </form>
-                    <p>Already a member? <a href="{% url "login" %}" class="thembo"> Login here</a></p>
+                    <p>Already a member? <a href="{% url "login" %}" class="thembo thembo underline-animation py-1"> Login here</a></p>
                 </div>
             </div>
         </div>
