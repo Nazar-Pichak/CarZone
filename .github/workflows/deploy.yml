@@ -31,9 +31,9 @@ jobs:
 
     - name: Force authentication for Heroku Git
       run: git config --global credential.helper store
-      
+
     - name: Deploy to Heroku
-      run: git push heroku main --force
+      run: git push heroku main 
 
     - name: Clean up
       run: rm ~/.netrc
