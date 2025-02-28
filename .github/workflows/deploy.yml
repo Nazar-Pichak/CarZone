@@ -32,8 +32,8 @@ jobs:
     - name: Force authentication for Heroku Git
       run: git config --global credential.helper store
 
-    - name: Pull Heroku remote
-      run: git pull heroku main
+    # - name: Pull Heroku remote
+    #   run: git pull heroku main
       
     - name: Deploy to Heroku
       run: git push heroku main --force
