@@ -1,0 +1,35 @@
+name: Deploy Django App to Heroku
+
+on:
+  push:
+    branches:
+      - main  # Trigger deployment on push to the main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Heroku API Key
+      run: |
+        echo "HEROKU_API_KEY=${{ secrets.HEROKU_API_KEY }}" >> $GITHUB_ENV
+
+    - name: Set up Heroku CLI
+      run: curl https://cli-assets.heroku.com/install.sh | sh
+
+    - name: Login to Heroku
+      run: |
+        echo "machine api.heroku.com" >> ~/.netrc
+        echo "  login ${{ secrets.HEROKU_EMAIL }}" >> ~/.netrc
+        echo "  password ${{ secrets.HEROKU_API_KEY }}" >> ~/.netrc
+
+    - name: Deploy to Heroku
+      run: |
+        git remote add heroku https://git@heroku.com/${{ secrets.HEROKU_APP_NAME }}.git
+        git push heroku main
+
+    - name: Clean up
+      run: rm ~/.netrc

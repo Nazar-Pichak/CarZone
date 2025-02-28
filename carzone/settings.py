@@ -106,16 +106,17 @@ WSGI_APPLICATION = 'carzone.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': config('DEV_DB_NAME'),
-        'USER': config('DEV_DB_USER'),
-        'PASSWORD': config('DEV_DB_PASSWORD'),
-        'HOST': config('DEV_DB_HOST'),
-        'PORT': config('DEV_DB_PORT'),
-    }
-}
+# Development database
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': config('DEV_DB_NAME'),
+#         'USER': config('DEV_DB_USER'),
+#         'PASSWORD': config('DEV_DB_PASSWORD'),
+#         'HOST': config('DEV_DB_HOST'),
+#         'PORT': config('DEV_DB_PORT'),
+#     }
+# }
 
 # DATABASES = {
     # 'default': {
@@ -128,7 +129,8 @@ DATABASES = {
     # }
 # }
 
-# DATABASES = {'default': dj_database_url.config(default=config('DATABASE_URL'))}
+# Production database
+DATABASES = {'default': dj_database_url.config(default=config('DATABASE_URL'))}
 
 
 # Password validation
@@ -169,11 +171,11 @@ USE_TZ = True
 
 
 # Uncoment the following lines in the development environment:
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_URL = '/static/'
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_URL = '/media/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'carzone/static'),
@@ -184,9 +186,9 @@ from django.contrib.messages import constants as message
 
 MESSAGE_TAGS = { message.ERROR: 'danger', }
 
-# SITE_ID = 3
+SITE_ID = 3
 # Uncomment the following line in the development environment:
-SITE_ID = 1
+# SITE_ID = 1
 
 # Email settings
 EMAIL_HOST = config('EMAIL_HOST')
@@ -197,47 +199,47 @@ EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
 
 
 # AWS Settings
-# AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
-# AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
-# AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
-# AWS_S3_REGION_NAME = config('AWS_S3_REGION_NAME')
-# AWS_S3_SIGNATURE_NAME = config('AWS_S3_SIGNATURE_NAME')
-# AWS_S3_FILE_OVERWRITE = config('AWS_S3_FILE_OVERWRITE', cast=bool)
-# AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-# AWS_DEFAULT_ACL =  None
-# AWS_S3_VERITY = True
-# CORS_ALLOW_ALL_ORIGINS = True
-# CORS_ALLOW_CREDENTIALS = True
+AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
+AWS_S3_REGION_NAME = config('AWS_S3_REGION_NAME')
+AWS_S3_SIGNATURE_NAME = config('AWS_S3_SIGNATURE_NAME')
+AWS_S3_FILE_OVERWRITE = config('AWS_S3_FILE_OVERWRITE', cast=bool)
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+AWS_DEFAULT_ACL =  None
+AWS_S3_VERITY = True
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
 
-# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-# STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
-# MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
+STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
 
-# CORS_ALLOWED_ORIGINS = [
-#     "https://www.carzonewebapp.site",
-#     "http://localhost:8000",  # Add the origin of your frontend app
-# ]
+CORS_ALLOWED_ORIGINS = [
+    "https://www.carzonewebapp.site",
+    "http://localhost:8000",  # Add the origin of your frontend app
+]
 
-# CORS_ALLOW_HEADERS = [
-#     'accept',
-#     'accept-encoding',
-#     'authorization',
-#     'content-type',
-#     'dnt',
-#     'origin',
-#     'user-agent',
-#     'x-csrftoken',
-#     'x-requested-with',
-#     'Access-Control-Allow-Origin',
-# ]
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+    'Access-Control-Allow-Origin',
+]
 
-# CORS_ALLOW_METHODS = [
-#     'DELETE',
-#     'GET',
-#     'OPTIONS',
-#     'PATCH',
-#     'POST',
-#     'PUT',
-# ]
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
