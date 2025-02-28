@@ -33,7 +33,7 @@ jobs:
       run: git config --global credential.helper store
 
     - name: Deploy to Heroku
-      run: git push --force heroku main 
+      run: git push heroku main 
 
     - name: Clean up
       run: rm ~/.netrc
