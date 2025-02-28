@@ -12,6 +12,8 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+      with:
+        fetch-depth: 0  # Unshallow the repository
 
     - name: Install Heroku CLI
       run: curl https://cli-assets.heroku.com/install.sh | sh
