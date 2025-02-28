@@ -31,9 +31,7 @@ jobs:
 
     - name: Force authentication for Heroku Git
       run: git config --global credential.helper store
-
-    - name: Unshallow the repository  
-      run: git fetch --all --unshallow
+      
     - name: Deploy to Heroku
       run: git push heroku main --force
 
