@@ -28,8 +28,8 @@ jobs:
 
     - name: Deploy to Heroku
       run: |
-        git remote add https://git.heroku.com/${{ secrets.HEROKU_APP_NAME }}.git
-        git push main
+        git remote add heroku https://git.heroku.com/${{ secrets.HEROKU_APP_NAME }}.git
+        git push heroku main
 
     - name: Clean up
       run: rm ~/.netrc
