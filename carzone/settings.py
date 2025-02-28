@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 import dj_database_url
+from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -21,15 +22,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '6_j4y50uu2p2jug1w^o3fl4%3)!v6n$rz5q(yto@2o4#9^r^x8'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['intense-tundra-83438-27e49d18471b.herokuapp.com','www.carzonewebapp.site']
-# ALLOWED_HOSTS = []
-
-
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.split(',')])
 
 LOGIN_REDIRECT_URL = 'dashboard'
 
@@ -41,9 +39,7 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-
 SOCIALACCOUNT_LOGIN_ON_GET = True
-
 
 # Application definition
 
@@ -110,16 +106,16 @@ WSGI_APPLICATION = 'carzone.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'carzone_db',
-#         'USER': 'postgres',
-#         'PASSWORD': 'postgres',
-#         'HOST': 'localhost',
-#         'PORT': '5432',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': config('DEV_DB_NAME'),
+        'USER': config('DEV_DB_USER'),
+        'PASSWORD': config('DEV_DB_PASSWORD'),
+        'HOST': config('DEV_DB_HOST'),
+        'PORT': config('DEV_DB_PORT'),
+    }
+}
 
 # DATABASES = {
     # 'default': {
@@ -132,7 +128,7 @@ WSGI_APPLICATION = 'carzone.wsgi.application'
     # }
 # }
 
-DATABASES = {'default': dj_database_url.config(default='postgres://postgres:postgres@localhost/carzone_db')}
+# DATABASES = {'default': dj_database_url.config(default=config('DATABASE_URL'))}
 
 
 # Password validation
@@ -173,11 +169,11 @@ USE_TZ = True
 
 
 # Uncoment the following lines in the development environment:
-# STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-# MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'carzone/static'),
@@ -188,66 +184,60 @@ from django.contrib.messages import constants as message
 
 MESSAGE_TAGS = { message.ERROR: 'danger', }
 
-SITE_ID = 3
+# SITE_ID = 3
 # Uncomment the following line in the development environment:
-# SITE_ID = 1
-
+SITE_ID = 1
 
 # Email settings
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'pichak.nazariy@gmail.com'
-EMAIL_HOST_PASSWORD = 'oifxpoctylwzugwf' 
-EMAIL_USE_TLS = True
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_PORT = config('EMAIL_PORT', cast=int)
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD') 
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
 
 
 # AWS Settings
-AWS_ACCESS_KEY_ID = 'AKIAYQEERYQKZYCPNXMZ'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'carzonewebapp'
+# AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
+# AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+# AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
+# AWS_S3_REGION_NAME = config('AWS_S3_REGION_NAME')
+# AWS_S3_SIGNATURE_NAME = config('AWS_S3_SIGNATURE_NAME')
+# AWS_S3_FILE_OVERWRITE = config('AWS_S3_FILE_OVERWRITE', cast=bool)
+# AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+# AWS_DEFAULT_ACL =  None
+# AWS_S3_VERITY = True
+# CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ALLOW_CREDENTIALS = True
 
-AWS_S3_SIGNATURE_NAME = 's3v4',
-AWS_S3_REGION_NAME = 'eu-north-1'
-AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-AWS_S3_FILE_OVERWRITE = True
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
+# MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
 
-STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
+# CORS_ALLOWED_ORIGINS = [
+#     "https://www.carzonewebapp.site",
+#     "http://localhost:8000",  # Add the origin of your frontend app
+# ]
 
-MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
+# CORS_ALLOW_HEADERS = [
+#     'accept',
+#     'accept-encoding',
+#     'authorization',
+#     'content-type',
+#     'dnt',
+#     'origin',
+#     'user-agent',
+#     'x-csrftoken',
+#     'x-requested-with',
+#     'Access-Control-Allow-Origin',
+# ]
 
-CORS_ALLOW_ALL_ORIGINS = True
-
-CORS_ALLOWED_ORIGINS = [
-    "https://www.carzonewebapp.site",
-    "http://localhost:8000",  # Add the origin of your frontend app
-]
-
-CORS_ALLOW_CREDENTIALS = True
-
-CORS_ALLOW_HEADERS = [
-    'accept',
-    'accept-encoding',
-    'authorization',
-    'content-type',
-    'dnt',
-    'origin',
-    'user-agent',
-    'x-csrftoken',
-    'x-requested-with',
-    'Access-Control-Allow-Origin',
-]
-
-CORS_ALLOW_METHODS = [
-    'DELETE',
-    'GET',
-    'OPTIONS',
-    'PATCH',
-    'POST',
-    'PUT',
-]
-
-AWS_DEFAULT_ACL =  None
-AWS_S3_VERITY = True
+# CORS_ALLOW_METHODS = [
+#     'DELETE',
+#     'GET',
+#     'OPTIONS',
+#     'PATCH',
+#     'POST',
+#     'PUT',
+# ]
