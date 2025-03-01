@@ -3,7 +3,7 @@ name: Deploy Django App to Heroku
 on:
   push:
     branches:
-      - main  # Runs when code is pushed to main branch
+      - main  # Runs when code is pushed to the main branch
 
 jobs:
   deploy:
@@ -13,7 +13,17 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
       with:
-        fetch-depth: 0  # Unshallow the repository
+        fetch-depth: 0  # Ensures full history is available
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.10
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt  # Ensure dependencies are installed
 
     - name: Install Heroku CLI
       run: curl https://cli-assets.heroku.com/install.sh | sh
@@ -33,10 +43,24 @@ jobs:
 
     - name: Force authentication for Heroku Git
       run: git config --global credential.helper store
-      
+
+    - name: Run collectstatic before deployment
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_STORAGE_BUCKET_NAME: ${{ secrets.AWS_STORAGE_BUCKET_NAME }}
+        AWS_S3_REGION_NAME: ${{ secrets.AWS_S3_REGION_NAME }}
+        DISABLE_COLLECTSTATIC: 0
+      run: python manage.py collectstatic --noinput
+
     - name: Deploy to Heroku
       run: git push heroku main --force
 
+    - name: Run database migrations
+      run: heroku run python manage.py migrate --app ${{ secrets.HEROKU_APP_NAME }}
+
+    - name: Restart Heroku dynos
+      run: heroku restart --app ${{ secrets.HEROKU_APP_NAME }}
+
     - name: Clean up
       run: rm ~/.netrc
-
