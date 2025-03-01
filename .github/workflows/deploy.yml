@@ -56,11 +56,5 @@ jobs:
     - name: Deploy to Heroku
       run: git push heroku main --force
 
-    - name: Run database migrations
-      run: heroku run python manage.py migrate --app ${{ secrets.HEROKU_APP_NAME }}
-
-    - name: Restart Heroku dynos
-      run: heroku restart --app ${{ secrets.HEROKU_APP_NAME }}
-
     - name: Clean up
       run: rm ~/.netrc
