@@ -244,6 +244,5 @@ CORS_ALLOW_METHODS = [
     'PATCH',
     'POST',
     'PUT',
-    'HEAD',
 ]
 
