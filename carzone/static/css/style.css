@@ -4233,11 +4233,16 @@ footer {
 /** Question start **/
 .question .contact-info li {
     line-height: 25px;
-    padding-left: 22px;
     font-weight: 500;
     position: relative;
     font-size: 15px;
     margin-bottom: 15px;
+}
+
+.contact-info li:nth-child(1),
+.contact-info li:nth-child(3),
+.contact-info li:nth-child(4) {
+    padding-left: 25px;
 }
 
 .question .contact-info li i {
@@ -5862,6 +5867,11 @@ footer {
     margin: 0 0 25px;
     font-weight: 400;
     color: #212121;
+}
+
+.sidebar-list li span {
+    color: #535353;
+    font-weight: 600;
 }
 
 .sidebar .search-box {
@@ -8550,10 +8560,6 @@ a.nav-link.active{
 
     .details-banner .text h1 {
         font-size: 35px;
-    }
-
-    .d-none-992{
-        display: none;
     }
 
     .details-banner .price-box-2{
