@@ -18,7 +18,8 @@
 ![Pull Requests](https://img.shields.io/github/issues-pr/Nazar-Pichak/carzone?style=plastic&color)
 ![Contributors](https://img.shields.io/github/contributors/Nazar-Pichak/carzone?style=plastic&color=black)
 ![Stars](https://img.shields.io/github/stars/Nazar-Pichak/carzone?style=plastic&color=black)
-![GitHub branch check runs](https://img.shields.io/github/check-runs/Nazar-Pichak/carzone/main?style=plastic&color)
+![Deployment Status](https://img.shields.io/github/deployments/Nazar-Pichak/CarZone/intense-tundra-83438?style=plastic&color)
+
 
 
 ## Description
