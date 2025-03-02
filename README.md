@@ -41,3 +41,4 @@ This project aims to provide a comprehensive platform for car dealers to showcas
 - **Favorites**: Users can save their favorite car listings for easy access later.
 - **Reviews and Ratings**: Users can leave reviews and ratings for car listings.
 - **Integration with Third-Party Services**: Integration with services like Google Maps for location-based searches and social media for sharing listings.
+
