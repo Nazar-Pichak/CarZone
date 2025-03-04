@@ -107,17 +107,22 @@ WSGI_APPLICATION = 'carzone.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+if DEBUG:
 # Development database
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': config('DEV_DB_NAME'),
-#         'USER': config('DEV_DB_USER'),
-#         'PASSWORD': config('DEV_DB_PASSWORD'),
-#         'HOST': config('DEV_DB_HOST'),
-#         'PORT': config('DEV_DB_PORT'),
-#     }
-# }
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': config('DEV_DB_NAME'),
+            'USER': config('DEV_DB_USER'),
+            'PASSWORD': config('DEV_DB_PASSWORD'),
+            'HOST': config('DEV_DB_HOST'),
+            'PORT': config('DEV_DB_PORT'),
+        }
+    }
+    
+else:
+    # Production database
+    DATABASES = {'default': dj_database_url.config(default=config('DATABASE_URL'))}
 
 # DATABASES = {
     # 'default': {
@@ -129,9 +134,6 @@ WSGI_APPLICATION = 'carzone.wsgi.application'
         # 'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     # }
 # }
-
-# Production database
-DATABASES = {'default': dj_database_url.config(default=config('DATABASE_URL'))}
 
 
 # Password validation
